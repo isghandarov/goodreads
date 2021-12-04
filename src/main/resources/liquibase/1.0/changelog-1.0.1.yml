@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-book-reviews-table
+      author: Rashid Alyarov
+      changes:
+        - createTable:
+            tableName: book_reviews
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false # SQL NOT NULL
+              - column:
+                  name: book_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: comment
+                  type: varchar(300)
+              - column:
+                  name: rating
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    nullable: false

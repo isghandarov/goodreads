@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-orders-table
+      author: Rashid Alyarov
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false # SQL NOT NULL
+              - column:
+                  name: description
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: card_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_amount
+                  type: decimal(9,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    nullable: false

@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-roles-table
+      author: Rashid Alyarov
+      changes:
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false # SQL NOT NULL
+              - column:
+                  name: role
+                  type: varchar(20)
+                  constraints:
+                    nullable: false

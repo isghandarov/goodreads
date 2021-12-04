@@ -1,0 +1,81 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-books-table
+      author: Rashid Alyarov
+      changes:
+        - createTable:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false # SQL NOT NULL
+              - column:
+                  name: name
+                  type: varchar(32)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: genre
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(300)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: decimal(6,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: left_in_stock
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: publisher
+                  type: varchar(30)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: page_count
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar(15)
+                  defaultValue: CREATED
+                  constraints:
+                    nullable: false
+              - column:
+                  name: language
+                  type: varchar(2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image
+                  type: varchar(60)

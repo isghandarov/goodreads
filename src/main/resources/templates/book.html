@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+
+<img th:src="@{'/images/' + ${book.image}}" alt="book" width="500" height="500"/>
+<br/>
+<label> Book name:
+    <p th:text="${book.name}"></p>
+</label>
+<br/>
+<label> Book genre:
+    <p th:text="${book.genre}"></p>
+</label>
+<br/>
+<label> Description:
+    <p th:text="${book.description}"></p>
+</label>
+<br/>
+<label> Book price:
+    <p th:text="${book.price}"></p>
+</label>
+<br/>
+<label> Left in stock:
+    <p th:text="${book.leftInStock}"></p>
+</label>
+<br/>
+<label> Author:
+    <p th:text="${book.author}"></p>
+</label>
+<br/>
+<label> Publisher:
+    <p th:text="${book.publisher}"></p>
+</label>
+<br/>
+<label> Language:
+    <p th:text="${book.language}"></p>
+</label>
+
+<table class="table table-striped">
+    <tr>
+        <th>User name</th>
+        <th>Comment</th>
+        <th>Rating</th>
+    </tr>
+
+    <th:block th:each="review: ${book.reviews}">
+        <tr>
+            <td th:text="${review.user.getFirstName()} + ' ' + ${review.user.lastName}"></td>
+            <td th:text="${review.comment}"></td>
+            <td th:text="${review.rating}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

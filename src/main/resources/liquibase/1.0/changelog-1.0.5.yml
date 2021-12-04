@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-buckets-table
+      author: Rashid Alyarov
+      changes:
+        - createTable:
+            tableName: buckets
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false # SQL NOT NULL
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    nullable: false

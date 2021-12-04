@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-cards-table
+      author: Rashid Alyarov
+      changes:
+        - createTable:
+            tableName: users_cards
+            columns:
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: card_id
+                  type: int
+                  constraints:
+                    nullable: false
